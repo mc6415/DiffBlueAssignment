@@ -1,0 +1,305 @@
+{
+  "/slf4j-logkit/org/slf4j/implStaticLoggerBinder.java": [
+    7,
+    78
+  ],
+  "/slf4j-logkit/org/apache/jmeter/loggingLogkitLoggerAdapter.java": [
+    137,
+    327
+  ],
+  "/slf4j-logkit/org/apache/jmeter/loggingLogkitLoggerFactory.java": [
+    45,
+    69
+  ],
+  "/protocol/tcp/org/apache/jmeter/protocol/tcp/samplerAbstractTCPClient.java": [
+    58,
+    79
+  ],
+  "/protocol/tcp/org/apache/jmeter/protocol/tcp/samplerBinaryTCPClientImpl.java": [
+    41,
+    144
+  ],
+  "/protocol/tcp/org/apache/jmeter/protocol/tcp/samplerLengthPrefixedBinaryTCPClientImpl.java": [
+    41,
+    121
+  ],
+  "/protocol/tcp/org/apache/jmeter/protocol/tcp/samplerReadException.java": [
+    42,
+    53
+  ],
+  "/protocol/tcp/org/apache/jmeter/protocol/tcp/samplerTCPClient.java": [
+    66,
+    96
+  ],
+  "/protocol/tcp/org/apache/jmeter/protocol/tcp/samplerTCPClientDecorator.java": [
+    45,
+    85
+  ],
+  "/protocol/tcp/org/apache/jmeter/protocol/tcp/samplerTCPClientImpl.java": [
+    39,
+    138
+  ],
+  "/protocol/tcp/org/apache/jmeter/protocol/tcp/samplerTCPSampler.java": [
+    459,
+    583
+  ],
+  "/protocol/tcp/org/apache/jmeter/protocol/tcp/control/guiTCPSamplerGui.java": [
+    11,
+    104
+  ],
+  "/protocol/tcp/org/apache/jmeter/protocol/tcp/config/guiTCPConfigGui.java": [
+    220,
+    261
+  ],
+  "/protocol/native/org/apache/jmeter/protocol/systemNativeCommand.java": [
+    40,
+    53
+  ],
+  "/protocol/native/org/apache/jmeter/protocol/systemSystemSampler.java": [
+    192,
+    331
+  ],
+  "/protocol/native/org/apache/jmeter/protocol/system/guiSystemSamplerGui.java": [
+    61,
+    282
+  ],
+  "/protocol/mongodb/org/apache/jmeter/protocol/mongodb/samplerMongoScriptRunner.java": [
+    61,
+    68
+  ],
+  "/protocol/mongodb/org/apache/jmeter/protocol/mongodb/samplerMongoScriptSampler.java": [
+    109,
+    144
+  ],
+  "/protocol/mongodb/org/apache/jmeter/protocol/mongodb/samplerMongoScriptSamplerBeanInfo.java": [
+    55,
+    74
+  ],
+  "/protocol/mongodb/org/apache/jmeter/protocol/mongodb/mongoEvalResultHandler.java": [
+    15,
+    67
+  ],
+  "/protocol/mongodb/org/apache/jmeter/protocol/mongodb/mongoMongoDB.java": [
+    51,
+    75
+  ],
+  "/protocol/mongodb/org/apache/jmeter/protocol/mongodb/mongoMongoUtils.java": [
+    42,
+    51
+  ],
+  "/protocol/mongodb/org/apache/jmeter/protocol/mongodb/configMongoDBHolder.java": [
+    29,
+    56
+  ],
+  "/protocol/mongodb/org/apache/jmeter/protocol/mongodb/configMongoSourceElement.java": [
+    176,
+    398
+  ],
+  "/protocol/mongodb/org/apache/jmeter/protocol/mongodb/configMongoSourceElementBeanInfo.java": [
+    16,
+    120
+  ],
+  "/protocol/mail/org/apache/jmeter/protocol/smtp/samplerSmtpSampler.java": [
+    261,
+    393
+  ],
+  "/protocol/mail/org/apache/jmeter/protocol/smtp/sampler/toolsCounterOutputStream.java": [
+    23,
+    64
+  ],
+  "/protocol/mail/org/apache/jmeter/protocol/smtp/sampler/protocolLocalTrustStoreSSLSocketFactory.java": [
+    82,
+    136
+  ],
+  "/protocol/mail/org/apache/jmeter/protocol/smtp/sampler/protocolSendMailCommand.java": [
+    577,
+    863
+  ],
+  "/protocol/mail/org/apache/jmeter/protocol/smtp/sampler/protocolSynchronousTransportListener.java": [
+    75,
+    100
+  ],
+  "/protocol/mail/org/apache/jmeter/protocol/smtp/sampler/protocolTrustAllSSLSocketFactory.java": [
+    128,
+    149
+  ],
+  "/protocol/mail/org/apache/jmeter/protocol/smtp/sampler/guiSecuritySettingsPanel.java": [
+    34,
+    419
+  ],
+  "/protocol/mail/org/apache/jmeter/protocol/smtp/sampler/guiSmtpPanel.java": [
+    922,
+    1165
+  ],
+  "/protocol/mail/org/apache/jmeter/protocol/smtp/sampler/guiSmtpSamplerGui.java": [
+    23,
+    194
+  ],
+  "/protocol/mail/org/apache/jmeter/protocol/mail/samplerMailFileFolder.java": [
+    164,
+    196
+  ],
+  "/protocol/mail/org/apache/jmeter/protocol/mail/samplerMailFileMessage.java": [
+    30,
+    36
+  ],
+  "/protocol/mail/org/apache/jmeter/protocol/mail/samplerMailFileStore.java": [
+    17,
+    59
+  ],
+  "/protocol/mail/org/apache/jmeter/protocol/mail/samplerMailReaderSampler.java": [
+    422,
+    610
+  ],
+  "/protocol/mail/org/apache/jmeter/protocol/mail/sampler/guiMailReaderSamplerGui.java": [
+    329,
+    335
+  ],
+  "/protocol/ldap/org/apache/jmeter/protocol/ldap/samplerLDAPExtSampler.java": [
+    476,
+    1077
+  ],
+  "/protocol/ldap/org/apache/jmeter/protocol/ldap/samplerLDAPSampler.java": [
+    170,
+    493
+  ],
+  "/protocol/ldap/org/apache/jmeter/protocol/ldap/samplerLdapClient.java": [
+    141,
+    154
+  ],
+  "/protocol/ldap/org/apache/jmeter/protocol/ldap/samplerLdapExtClient.java": [
+    133,
+    285
+  ],
+  "/protocol/ldap/org/apache/jmeter/protocol/ldap/control/guiLdapExtTestSamplerGui.java": [
+    107,
+    110
+  ],
+  "/protocol/ldap/org/apache/jmeter/protocol/ldap/control/guiLdapTestSamplerGui.java": [
+    69,
+    109
+  ],
+  "/protocol/ldap/org/apache/jmeter/protocol/ldap/config/guiLDAPArgument.java": [
+    30,
+    178
+  ],
+  "/protocol/ldap/org/apache/jmeter/protocol/ldap/config/guiLDAPArguments.java": [
+    85,
+    265
+  ],
+  "/protocol/ldap/org/apache/jmeter/protocol/ldap/config/guiLDAPArgumentsPanel.java": [
+    159,
+    345
+  ],
+  "/protocol/ldap/org/apache/jmeter/protocol/ldap/config/guiLdapConfigGui.java": [
+    13,
+    425
+  ],
+  "/protocol/ldap/org/apache/jmeter/protocol/ldap/config/guiLdapExtConfigGui.java": [
+    192,
+    598
+  ],
+  "/protocol/jms/org/apache/jmeter/protocol/jmsUtils.java": [
+    102,
+    253
+  ],
+  "/protocol/jms/org/apache/jmeter/protocol/jms/samplerBaseJMSSampler.java": [
+    256,
+    379
+  ],
+  "/protocol/jms/org/apache/jmeter/protocol/jms/samplerFixedQueueExecutor.java": [
+    61,
+    113
+  ],
+  "/protocol/jms/org/apache/jmeter/protocol/jms/samplerJMSProperties.java": [
+    135,
+    247
+  ],
+  "/protocol/jms/org/apache/jmeter/protocol/jms/samplerJMSProperty.java": [
+    24,
+    171
+  ],
+  "/protocol/jms/org/apache/jmeter/protocol/jms/samplerJMSSampler.java": [
+    327,
+    561
+  ],
+  "/protocol/jms/org/apache/jmeter/protocol/jms/samplerMessageAdmin.java": [
+    118,
+    163
+  ],
+  "/protocol/jms/org/apache/jmeter/protocol/jms/samplerPublisherSampler.java": [
+    365,
+    591
+  ],
+  "/protocol/jms/org/apache/jmeter/protocol/jms/samplerQueueExecutor.java": [
+    24,
+    47
+  ],
+  "/protocol/jms/org/apache/jmeter/protocol/jms/samplerReceiver.java": [
+    68,
+    154
+  ],
+  "/protocol/jms/org/apache/jmeter/protocol/jms/samplerSubscriberSampler.java": [
+    248,
+    512
+  ],
+  "/protocol/jms/org/apache/jmeter/protocol/jms/samplerTemporaryQueueExecutor.java": [
+    19,
+    62
+  ],
+  "/protocol/jms/org/apache/jmeter/protocol/jms/control/guiJMSPropertiesPanel.java": [
+    65,
+    353
+  ],
+  "/protocol/jms/org/apache/jmeter/protocol/jms/control/guiJMSPublisherGui.java": [
+    155,
+    388
+  ],
+  "/protocol/jms/org/apache/jmeter/protocol/jms/control/guiJMSSamplerGui.java": [
+    265,
+    303
+  ],
+  "/protocol/jms/org/apache/jmeter/protocol/jms/control/guiJMSSubscriberGui.java": [
+    54,
+    286
+  ],
+  "/protocol/jms/org/apache/jmeter/protocol/jms/clientClientPool.java": [
+    82,
+    83
+  ],
+  "/protocol/jms/org/apache/jmeter/protocol/jms/clientInitialContextFactory.java": [
+    59,
+    174
+  ],
+  "/protocol/jms/org/apache/jmeter/protocol/jms/clientPublisher.java": [
+    189,
+    210
+  ],
+  "/protocol/jms/org/apache/jmeter/protocol/jms/clientReceiveSubscriber.java": [
+    289,
+    383
+  ],
+  "/protocol/jdbc/org/apache/jmeter/protocol/jdbcAbstractJDBCTestElement.java": [
+    774,
+    787
+  ],
+  "/protocol/jdbc/org/apache/jmeter/protocol/jdbcJDBCTestElementBeanInfoSupport.java": [
+    29,
+    106
+  ],
+  "/protocol/jdbc/org/apache/jmeter/protocol/jdbc/samplerJDBCSampler.java": [
+    21,
+    118
+  ],
+  "/protocol/jdbc/org/apache/jmeter/protocol/jdbc/samplerJDBCSamplerBeanInfo.java": [
+    2,
+    36
+  ],
+  "/protocol/jdbc/org/apache/jmeter/protocol/jdbc/processorAbstractJDBCProcessor.java": [
+    45,
+    62
+  ],
+  "/protocol/jdbc/org/apache/jmeter/protocol/jdbc/processorJDBCPostProcessor.java": [
+    4,
+    36
+  ]}
