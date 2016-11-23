@@ -3,18 +3,48 @@ import {Link} from 'react-router';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 import TextField from 'material-ui/TextField';
 import $ from 'jquery';
+import _ from 'lodash';
 
 export default class Home extends React.Component{
   constructor(props){
     super(props);
     this.state = {
       filteredData: {},
-      keys: []
+      keys: [],
+      structure: {}
     }
   }
 
+  createStructure(data){
+    var tree = {}
+    _.each(data, (val,key) =>{
+      var p = key.split("/");
+      p.shift();
+      var currentLevel = tree;
+
+      while(p.length > 0){
+        if(p[0].indexOf(".") > -1){
+          var obj = {};
+          obj[p[0]] = val;
+          currentLevel.push(obj);
+          p = p.splice(1);
+        } else {
+          if(currentLevel.hasOwnProperty(p[0])){
+            currentLevel = currentLevel[p[0]]
+            p = p.splice(1);
+          } else {
+            currentLevel[p[0]] = [];
+            currentLevel = currentLevel[p[0]]
+            p = p.splice(1);
+          }
+        }
+      }
+    })
+    this.setState({structure: tree})
+  }
+
   componentWillReceiveProps(props){
-    console.log(props.data);
+    this.createStructure(props.data);
     this.setState({filteredData: props.data, keys: Object.keys(props.data)})
   }
 
@@ -36,7 +66,7 @@ export default class Home extends React.Component{
     const rows = [];
 
     $.each(this.state.filteredData, (row) => {
-      var coverage = this.state.filteredData[row][1] / this.state.filteredData[row][0]
+      var coverage = (this.state.filteredData[row][0] / this.state.filteredData[row][1]) * 100
       rows.push(
         <TableRow>
           <TableRowColumn style={{width: "35rem"}}>{row}</TableRowColumn>
