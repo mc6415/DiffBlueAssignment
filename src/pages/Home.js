@@ -16,30 +16,36 @@ export default class Home extends React.Component{
   }
 
   createStructure(data){
-    var tree = {}
+    var tree = []
     _.each(data, (val,key) =>{
       var p = key.split("/");
       p.shift();
       var currentLevel = tree;
 
       while(p.length > 0){
-        if(p[0].indexOf(".") > -1){
-          var obj = {};
-          obj[p[0]] = val;
-          currentLevel.push(obj);
-          p = p.splice(1);
-        } else {
-          if(currentLevel.hasOwnProperty(p[0])){
-            currentLevel = currentLevel[p[0]]
-            p = p.splice(1);
-          } else {
-            currentLevel[p[0]] = [];
-            currentLevel = currentLevel[p[0]]
-            p = p.splice(1);
-          }
-        }
+  	if(p[0].indexOf(".") > -1){
+     var obj = {}
+     obj[p[0]] = val;
+     currentLevel.push(obj);
+     currentLevel = tree;
+     p = p.splice(1);
+    } else {
+    	var index = _.findIndex(currentLevel, p[0])
+      if(index > -1){
+      	currentLevel = currentLevel[index][p[0]];
+        p = p.splice(1);
+      } else {
+      	var obj = {};
+        obj[p[0]] = [];
+        currentLevel.push(obj);
+        currentLevel = currentLevel[_.findIndex(currentLevel, p[0])][p[0]];
+        p = p.splice(1);
       }
+    }
+  }
     })
+    console.log(tree);
+    
     this.setState({structure: tree})
   }
 
@@ -64,6 +70,13 @@ export default class Home extends React.Component{
 
   render(){
     const rows = [];
+
+    _.each(this.state.structure, (val,key) => {
+      while(val.length > 0 ){
+        console.log(val);
+        val = val.splice(1);
+      }
+    })
 
     $.each(this.state.filteredData, (row) => {
       var coverage = (this.state.filteredData[row][0] / this.state.filteredData[row][1]) * 100
