@@ -4,6 +4,8 @@ import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColu
 import TextField from 'material-ui/TextField';
 import $ from 'jquery';
 import _ from 'lodash';
+import JSONTree from 'react-json-tree';
+import omitEmpty from 'omit-empty';
 
 export default class Home extends React.Component{
   constructor(props){
@@ -16,37 +18,33 @@ export default class Home extends React.Component{
   }
 
   createStructure(data){
-    var tree = []
+    var tree = {};
     _.each(data, (val,key) =>{
       var p = key.split("/");
       p.shift();
       var currentLevel = tree;
-
       while(p.length > 0){
-  	if(p[0].indexOf(".") > -1){
-     var obj = {}
-     obj[p[0]] = val;
-     currentLevel.push(obj);
-     currentLevel = tree;
-     p = p.splice(1);
-    } else {
-    	var index = _.findIndex(currentLevel, p[0])
-      if(index > -1){
-      	currentLevel = currentLevel[index][p[0]];
-        p = p.splice(1);
-      } else {
-      	var obj = {};
-        obj[p[0]] = [];
-        currentLevel.push(obj);
-        currentLevel = currentLevel[_.findIndex(currentLevel, p[0])][p[0]];
-        p = p.splice(1);
+        var name = p[0];
+        if(name.indexOf(".") > -1){
+          var coverage = {
+            "Lines with Test Coverage": val[0],
+            "Total Lines": val[1]
+          }
+          currentLevel[name] = coverage;
+          p = p.splice(1);
+        } else {
+          if(currentLevel.hasOwnProperty(name)){
+            currentLevel = currentLevel[name];
+            p = p.splice(1);
+          } else{
+            currentLevel[name] = {files: {}};
+            currentLevel = currentLevel[name];
+            p = p.splice(1);
+          }
+        }
       }
-    }
-  }
     })
-    console.log(tree);
-    
-    this.setState({structure: tree})
+    this.setState({structure: omitEmpty(tree)})
   }
 
   componentWillReceiveProps(props){
@@ -71,13 +69,6 @@ export default class Home extends React.Component{
   render(){
     const rows = [];
 
-    _.each(this.state.structure, (val,key) => {
-      while(val.length > 0 ){
-        console.log(val);
-        val = val.splice(1);
-      }
-    })
-
     $.each(this.state.filteredData, (row) => {
       var coverage = (this.state.filteredData[row][0] / this.state.filteredData[row][1]) * 100
       rows.push(
@@ -91,19 +82,11 @@ export default class Home extends React.Component{
     })
 
     return(
-      <Table fixedHeader={true}>
-        <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
-          <TableRow>
-            <TableHeaderColumn style={{width: "35rem"}}><TextField hintText="File" onChange={(e) => this.filterData(e)}/></TableHeaderColumn>
-            <TableHeaderColumn>Lines with Test Coverage</TableHeaderColumn>
-            <TableHeaderColumn>Total Lines</TableHeaderColumn>
-            <TableHeaderColumn>Coverage Percentage</TableHeaderColumn>
-          </TableRow>
-        </TableHeader>
-        <TableBody displayRowCheckbox={false}>
-          {rows}
-        </TableBody>
-      </Table>
+      <div>
+      <JSONTree data={this.state.structure} hideRoot={true}
+        getItemString = {(type,data,itemType,itemString) => (<span></span>)}
+      />
+    </div>
     )
   }
 }

@@ -27,7 +27,7 @@ export default class Layout extends React.Component{
       return(
       <div>
         <AppBar title="DiffBlue Assignment"></AppBar>
-        <div style={{textAlign: "center"}}>
+        <div>
           {children}
         </div>
       </div>
